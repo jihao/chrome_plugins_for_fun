@@ -1,0 +1,18 @@
+{
+    "name": "haojii-chrome-plugin-google-time",
+    "version": "1.0",
+    "description": "在google搜索栏上方显示当前时间的插件",
+    "background_page": "background.html",
+    "permissions": ["http://www.google.com.hk/*", "http://www.google.com/"],
+    "browser_action": {
+        "default_title": "",
+        "default_icon": "icon.gif"
+    },
+    "content_scripts": [
+        {
+          "matches": ["http://www.google.com.hk/*", "http://www.google.com/"],
+          "css": ["mystyles.css"],
+          "js": ["jquery-1.7.1.min.js", "myscript.js"]
+        }
+      ]
+}
