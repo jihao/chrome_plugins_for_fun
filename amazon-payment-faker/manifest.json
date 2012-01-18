@@ -1,0 +1,18 @@
+{
+    "name": "amazon-payment-faker",
+    "version": "1.0",
+    "description": "amazon-payment-faker for mobile payment demo",
+    "background_page": "background.html",
+    "permissions": ["https://www.amazon.com/*", "http://www.amazon.com/*"],
+    "browser_action": {
+        "default_title": "",
+        "default_icon": "amazon_icon.png"
+    },
+    "content_scripts": [
+        {
+          "matches": ["https://www.amazon.com/gp/buy/gift/handlers/*", "https://www.amazon.com/gp/buy/shipaddressselect/handlers/*","https://www.amazon.com/gp/buy/gift/handlers/continue.html#d=1"],
+          "css": ["mystyles.css"],
+          "js": ["jquery-1.7.1.min.js", "myscript.js"]
+        }
+      ]
+}
