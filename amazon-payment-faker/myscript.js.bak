@@ -1,0 +1,15 @@
+var phoneURL = chrome.extension.getURL("images/phone.png");
+var applyURL = chrome.extension.getURL("images/apply.png");
+
+$(document).ready(function() {
+  console.log($("#other-payment-options"));
+  
+  var $html = '<div class="payment-method" id="ericsson_mobile" style=""><img class="logo"  alt="" src="'+phoneURL+'"><h2 id="title-pay_by_mobile">Pay by Mobile</h2><div style="margin-left: 118px;"><p class="caption">Phone Number: 100000</p><p class="caption">Payment Password</p></div><div class="offer" id="gcpromo"><input type="text" size="25" maxlength="25" id="gcpromoinput" title="phone number"><input type="image" class="apply action_link" style="vertical-align: text-bottom;"  alt="apply" src="'+applyURL+'" id="pay_by_mobile_apply"><p class="caption" id="title-pay_by_mobile_apply">Pay by mobile through Ericsson Mobile Orchestrator.</p></div><br></div>';
+  
+  $("#other-payment-options").after ( $html );
+  $("#other-payment-options").after(  );
+   
+   $("#pay_by_mobile_apply").live('click',function(){
+   window.location.href="http://localhost:8080/amazon-mobile-payment";
+   });
+});
